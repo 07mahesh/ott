@@ -1,0 +1,51 @@
+{% extends 'htmlfiles/home.html' %}
+{% block content %}
+{%if model2%}
+<br>
+<h2>movie details</h2>
+<br>
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width:400px;">
+          <img src="{{model2.movieimg.url}}" class="card-img-top p-3" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{model2.moviename}}</h2>
+            <h3 class="card-text">  {{model2.lan}}</h3>
+            <h3 class="card-text">  {{moddel2.rating}}</h3>
+            <p class="card-text">  {{model2.about}}</p>
+            <br>
+            <div class="d-flex justify-content-between">
+              <a href="{% url 'update' pk=model2.pk %}" class="btn btn-lg btn-outline-secondary">Update</a>
+              <a href="{% url 'delete' pk=model2.pk %}" class="btn btn-lg btn-outline-danger">Delete</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+{% endif %}
+{% endblock %}
+
+
+
+<!-- 
+<div class="container">
+  <div class="row">
+      <div class="col-md-4">
+        <div class="card" style="width:400px;">
+          <img src="{{model2.movieimg.url}}" class="card-img-top p-3" alt="...">
+          <div class="card-body">
+            <h2 class="card-title">{{model2.moviename}}</h2>
+            <h3 class="card-text">  {{model2.lan}}</h3>
+            <h3 class="card-text">  {{moddel2.rating}}</h3>
+            <p class="card-text">  {{model2.about}}</p>
+            <a href="{% url 'update' pk=model2.pk %}"  class="btn btn-primary">Update</a>
+            <br>
+            <a href="{% url 'delete' pk=model2.pk %}"  class="btn btn-primary">Delete</a>
+          </div>
+        </div>
+      </div>
+  </div>
+</div> -->
+

@@ -1,0 +1,30 @@
+{% extends 'htmlfiles/home.html' %}
+{% block content %}
+{% if model %}
+<br>
+<br>
+  <div class="container">
+    <div class="row">
+      {% for mod in model %} 
+        <div class="col-md-4">
+          <div class="card" style="width:400px;">
+            <img src= {{mod.movieimg.url}} class="card-img-top p-3" alt="...">
+            <div class="card-body">
+              <h2 class="card-title">{{mod.moviename}}</h2>
+              <h3 class="card-text">{{mod.lan}}</h3>
+              <h3 class="card-text">{{mod.rating}}</h3>
+              <p class="card-text">{{mod.about}}</p>
+              <a href="{% url 'details' pk=mod.pk %}" class="btn btn-primary">Show Details</a>
+            </div>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}
+{% endblock %}
+
+
+
+
+

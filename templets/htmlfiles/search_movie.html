@@ -1,0 +1,18 @@
+{% extends 'htmlfiles/home.html' %}
+{% block content %}
+<center>
+    <br>
+    <br>
+    {% if search %}
+    <h3> you searched for....{{search}}</h3>
+    <br>
+    {%else%}
+    <h2> search not found </h2>
+    {%endif%}
+    <br>
+
+    {% for i in  search_model %}
+        <a href="{% url 'details' pk=i.pk %}" style="color: brown; font-size: 20px;">{{i}} </a> <br>
+    {%endfor%}
+</center>
+{%endblock%}
